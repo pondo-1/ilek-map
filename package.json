@@ -1,0 +1,32 @@
+{
+  "name": "sinngrund-kulturdatenbank-plugin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "wp-scripts build",
+    "start": "wp-scripts start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dinae-Kang/Sinngrund-Kulturdatenbank-plugin.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dinae-Kang/Sinngrund-Kulturdatenbank-plugin/issues"
+  },
+  "homepage": "https://github.com/Dinae-Kang/Sinngrund-Kulturdatenbank-plugin#readme",
+  "devDependencies": {
+    "@wordpress/icons": "^7.0.1",
+    "@wordpress/scripts": "*"
+  },
+  "dependencies": {
+    "leaflet": "^1.9.3",
+    "leaflet-draw": "^1.0.4",
+    "leaflet.markercluster": "^1.5.3",
+    "leaflet.markercluster.layersupport": "^2.0.1"
+  }
+}

@@ -1,0 +1,448 @@
+#current_post_id {
+  display: none;
+}
+
+.kulturdatenbank .leaflet-container {
+  font-family: "Barlow";
+}
+
+.leaflet-container a {
+  color: var(--d_blue);
+}
+
+.leaflet-bottom.leaflet-right {
+  width: 100%;
+}
+
+.kulturdatenbank .leaflet-control-zoom {
+  margin-bottom: 40px;
+  margin-right: 40px;
+  border-radius: 8px;
+}
+
+.leaflet-control-zoom.leaflet-bar a {
+  width: 45px;
+  height: 45px;
+  font-size: 40px;
+  line-height: 40px;
+}
+
+.kulturdatenbank .leaflet-touch .leaflet-control-zoom-in,
+.leaflet-touch .leaflet-control-zoom-out {
+  font-size: 40px;
+  line-height: 40px;
+}
+
+.leaflet-touch .leaflet-bar a:first-child {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.leaflet-touch .leaflet-bar a:last-child {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.kulturdatenbank .leaflet-container .leaflet-control-attribution {
+  margin: 0 auto 0 15px;
+  background-color: rgba(255, 255, 255, 0);
+  right: auto;
+  left: 0;
+  position: absolute;
+  bottom: 2px;
+}
+
+.kulturdatenbank .leaflet-container .leaflet-control-attribution a {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 400;
+  color: #000;
+}
+
+.leaflet-container .leaflet-bottom.leaflet-right::after {
+  height: 20px;
+  width: 90px;
+  background-size: contain;
+  content: "";
+  background-image: url("/wp-content/plugins/ILEK-Map-App/icons/mapbox-logo-black.svg");
+  display: inline-block;
+  background-color: none;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 5px 5px 2px 5px;
+}
+
+/* Basic Side Grid Default Media */
+
+html,
+body,
+.side_wrapper {
+  overflow-y: hidden;
+}
+
+.kulturdatenbank {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+.side_wrapper {
+  display: grid;
+  grid-template-rows: 100%;
+  position: relative;
+  overflow-y: hidden;
+}
+
+.menu.top {
+  grid-row: 1/2;
+  grid-column: 1/2;
+}
+
+/*
+  .map_wrapper {  
+    position: fixed;
+    left: 0;
+    top: 0;  
+    grid-row: 1/2;
+    grid-column: 1/2;
+  }
+  */
+
+.map_block {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  grid-row: 1/2;
+  grid-column: 1/2;
+}
+
+.sidebar {
+  margin: 0;
+  min-width: 360px;
+  grid-column: 2/3;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+/* Header Nav Default Media */
+
+.menu.top {
+  position: absolute;
+  z-index: 999;
+  width: 1px;
+}
+
+.menu.top li {
+  position: fixed;
+  top: 40px;
+  left: 60px;
+}
+
+.menu.top li:nth-child(2) {
+  right: 100px;
+  top: 40px;
+}
+
+.menu.top li:nth-child(3) {
+  right: 0;
+  top: 40px;
+}
+
+/*Map */
+.map_block .marker-cluster {
+  background-image: url(/wp-content/plugins/ILEK-Map-App/icons/icon-stern.svg);
+  background-color: rgba(255, 255, 255, 0);
+  background-size: contain;
+  width: 60px !important;
+  height: 60px !important;
+}
+
+.map_block .marker-cluster div {
+  background-color: rgba(255, 255, 255, 0);
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.map_block .marker-cluster span {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/*Map Popup Default Media*/
+
+.leaflet-popup {
+  padding: 7.5px;
+  border: 3px;
+  width: 450px;
+  max-width: 90vw;
+  margin: 20px 0;
+}
+
+.leaflet-popup-content {
+  display: flex;
+  flex-direction: row;
+  width: 400px !important;
+  max-width: 90vw;
+  position: relative;
+  padding: 10px;
+  margin: 0;
+}
+
+.leaflet-popup-content img {
+  width: 100px;
+  height: auto;
+  padding-right: 10px;
+  align-self: center;
+  display: block;
+}
+
+.text_wrapper {
+  flex-direction: column;
+  max-width: 390px;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 10px;
+}
+
+.popup_title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--d_text);
+}
+
+.popupcategory {
+  display: none;
+}
+
+.leaflet-popup p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.1em;
+  padding-top: 5px;
+  font-weight: 400;
+}
+
+.leaflet-popup .popup_button {
+  padding: 0;
+  font-size: 18px;
+  display: block;
+  border: none;
+  grid-column: 2/3;
+  grid-row: 3/4;
+  border: none;
+  position: relative;
+  margin: 15px 0 15px 15px;
+  font-weight: 600;
+}
+
+.leaflet-popup .popup_button:hover,
+.leaflet-popup .popup_button:active {
+  background-color: #fff;
+  color: var(--d_text);
+  opacity: 0.75;
+}
+
+.leaflet-popup .popup_button::after {
+  left: -25px;
+  right: auto;
+  background-size: 60%;
+  bottom: -5px;
+  padding: 0;
+  top: auto;
+}
+
+.leaflet-popup .popup_button:hover::after,
+.leaflet-popup .popup_button:hover::after {
+  background-image: url(/wp-content/plugins/ILEK-Map-App/icons/right-svgrepo-com.svg);
+}
+
+/* .legal .footer_nav ul {
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.legal .footer_nav li {
+  padding: 5px 15px;
+} */
+
+/*Sidebar Default Media*/
+
+.sidebar {
+  background-color: rgba(128, 128, 128, 0.1);
+  display: inline-block;
+  border: none;
+  box-shadow: -4px 0px 20px 0px var(--l_grey);
+  position: relative;
+  z-index: 999;
+}
+
+/* Media Queries */
+@media screen and (max-width: 1650px) {
+  .kulturdatenbank .side_wrapper {
+    grid-template-columns: 60% 40%;
+  }
+
+  .kulturdatenbank .logo {
+    font-size: 34px;
+  }
+
+  .kulturdatenbank .menu.top li:nth-child(3) {
+    left: 50%;
+  }
+
+  .kulturdatenbank .menu.top li:nth-child(2) {
+    left: 43%;
+  }
+}
+
+@media screen and (max-width: 1350px) {
+  body.kulturdatenbank .menu.top li:nth-child(3) {
+    left: 45%;
+  }
+
+  body.kulturdatenbank .menu.top li:nth-child(2) {
+    left: 37%;
+  }
+
+  .kulturdatenbank .leaflet-container .leaflet-control-attribution {
+    margin: 0 auto 0 15px;
+    padding-left: 0;
+  }
+
+  /* .kulturdatenbank .legal li {
+    padding: 5px 15px 30px 15px;
+  }
+   */
+  /* .kulturdatenbank .legal li {
+    padding: 15px;
+  } */
+}
+
+/* Media Querries */
+@media screen and (max-width: 980px) {
+  html,
+  body,
+  .side_wrapper {
+    overflow-y: scroll;
+    height: auto !important;
+  }
+
+  .kulturdatenbank .menu.top {
+    background-color: rgba(128, 128, 128, 0.1);
+    order: 1;
+  }
+
+  .side_wrapper {
+    display: flex;
+    flex-direction: column;
+    position: static;
+  }
+
+  .map_block {
+    height: 550px;
+    max-height: 85vh;
+    order: 2;
+  }
+
+  .kulturdatenbank .leaflet-control-zoom {
+    margin-bottom: 10px;
+    margin-right: 10px;
+  }
+
+  .kulturdatenbank .leaflet-container .leaflet-control-attribution {
+    margin: 0;
+    display: block;
+    width: max-content;
+    position: relative;
+    right: 0;
+    left: auto;
+  }
+
+  .kulturdatenbank .leaflet-container .leaflet-control-attribution a {
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  .leaflet-container .leaflet-bottom.leaflet-right::after {
+    display: none;
+  }
+
+  .leaflet-container .leaflet-bottom.leaflet-left::before {
+    height: 20px;
+    width: 90px;
+    background-size: contain;
+    content: "";
+    background-image: url("/wp-content/plugins/ILEK-Map-App/icons/mapbox-logo-black.svg");
+    display: inline-block;
+    background-color: none;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin: 2px 5px 2px 5px;
+  }
+
+  /*
+    .leaflet-popup {
+      position: relative; 
+        }
+    */
+
+  .leaflet-popup .popup_button {
+    margin-right: 0;
+  }
+
+  .scrolldown_wrapper {
+    position: absolute;
+    top: 590px;
+    right: 65px;
+    z-index: 999999;
+  }
+
+  .scrolldown.icon {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    border-radius: 50px;
+    border: 1px #fff solid;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+  }
+
+  .scrolldown.icon::before {
+    content: "";
+    background-image: url("/wp-content/plugins/ILEK-Map-App/icons/scrolldown-svgrepo-com.svg");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+  }
+
+  .kulturdatenbank .sidebar {
+    display: block;
+    position: static;
+    width: 100%;
+    max-width: 100%;
+    order: 3;
+    overflow-y: auto;
+    min-width: 250px;
+    box-shadow: none;
+  }
+
+  .legal {
+    position: static;
+    order: 4;
+  }
+}

@@ -1,0 +1,981 @@
+html,
+body,
+.side_wrapper {
+  width: 100%;
+  height: min-content;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  box-sizing: border-box;
+}
+
+body .side_wrapper {
+  height: 100%;
+}
+
+/* colors */
+
+:root {
+  --l_blue: #2e3033; /* #21201E; /*#9bbe3d; /*#009cde; /* rgba(0, 156, 222, 1) */
+  --d_blue: #2e3033; /*#5d7125;
+  --d_text: #124054;
+  --red: #eb260c;
+  --l_grey: #808080; /**rgba(128, 128, 128, 1)*/
+  --yellow: #f4af16;
+  --d_green: #307857;
+  --l_green: #a9c600;
+  --magenta: #910f84;
+}
+
+.d_blue {
+  color: var(--d_blue);
+}
+
+.l_blue {
+  color: var(--l_blue);
+}
+
+/* Link Style Default Media */
+a {
+  text-decoration: underline;
+  color: var(--l_blue);
+}
+
+a:hover,
+a:active {
+  opacity: 0.75;
+}
+
+/* Button Styles Default Media */
+
+button,
+.kulturdatenbank .button {
+  border-radius: 3px;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 15px 30px 15px 15px;
+  border: 2px solid var(--d_text);
+  display: inline-block;
+  width: fit-content;
+  -ms-width: auto;
+  position: relative;
+  background-color: #fff;
+  color: var(--d_text);
+  margin-right: 30px;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--d_text);
+  line-height: 1em;
+}
+
+button::after,
+.kulturdatenbank .button::after {
+  position: absolute;
+  right: 5px;
+  left: auto;
+  padding: 10px 0;
+  top: 0;
+  bottom: auto;
+  font-size: 25px;
+  width: 25px;
+  height: 25px;
+  content: "";
+  background-image: url(/wp-content/plugins/ILEK-Map-App/icons/right-svgrepo-com.svg);
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+button:hover,
+button:active,
+.kulturdatenbank .button:hover,
+.kulturdatenbank .button:active {
+  background-color: var(--d_text);
+  color: #fff;
+  opacity: 1;
+}
+
+button:hover::after,
+.kulturdatenbank .button:hover::after,
+button:active::after,
+.kulturdatenbank .button:active::after {
+  background-image: url(/wp-content/plugins/ILEK-Map-App/icons/right-svgrepo-com-white.svg);
+}
+
+/*Basic Elements Default Media */
+
+body.kulturdatenbank,
+body.kulturdatenbank h1,
+body.kulturdatenbank h2 {
+  font-family: "Barlow";
+}
+body.kulturdatenbank,
+body.kulturdatenbank h1 {
+  color: var(--d_text);
+}
+p {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 32px;
+  color: var(--d_text);
+}
+
+p strong {
+  font-weight: 600;
+}
+
+h1 {
+  font-weight: 400;
+  font-size: 34px;
+  color: var(--d_blue);
+  margin: 0;
+}
+
+/* Postioning close button */
+.popup_wrapper #d-close-button {
+  margin: 0;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(30%, -30%);
+
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 5px 1px var(--l_grey);
+  z-index: 9;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup_wrapper #d-close-button:hover,
+.popup_wrapper #d-close-button:active {
+  background-color: #808080;
+}
+
+.popup_wrapper #d-close-button .close_x_mark {
+  height: 50%;
+  width: 50%;
+  background-image: url("/wp-content/plugins/ILEK-Map-App/icons/close-black.svg");
+}
+
+.popup_wrapper.hide_info {
+  display: none;
+}
+
+.popup_wrapper {
+  height: 100%;
+  background-color: rgba(128, 128, 128, 0.8);
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup.info {
+  max-width: 1200px;
+  background-color: #fff;
+  display: block;
+  position: relative;
+  margin: 5%;
+}
+
+.content_wrapper {
+  max-width: 1200px;
+  background-color: #fff;
+  display: block;
+  position: static;
+  max-height: 90vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* .close_wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 60px;
+  overflow: visible;
+  z-index: 9999;
+  width: 100%;
+  position: absolute;
+} */
+
+.slide {
+  align-content: center;
+  align-items: center;
+  padding: 0 90px 90px 90px;
+  text-shadow: none;
+  display: none;
+}
+
+.slide.show {
+  display: grid;
+}
+
+.slide .branding {
+  float: right;
+}
+
+.slide img {
+  max-width: 300px;
+}
+
+.popup.info span {
+  display: block;
+  font-weight: 600;
+  font-size: 40px;
+}
+
+.popup.info button,
+.popup.info .button {
+  margin-top: 40px;
+}
+
+/* .popup.info .close.text_button.button {
+  margin: 0;
+} */
+
+.popup.info .prev {
+  padding: 15px 15px 15px 30px;
+}
+
+.popup.info .prev::after {
+  background-image: url(/wp-content/plugins/ILEK-Map-App/icons/left-svgrepo-com-dark.svg);
+  right: auto;
+  left: 5px;
+}
+
+.popup.info .prev:hover::after,
+.popup.info .prev:active::after {
+  background-image: url(/wp-content/plugins/ILEK-Map-App/icons/left-svgrepo-com-white.svg);
+}
+
+/* Welcome Slide one Default Media */
+
+.slide.one {
+  grid-template-columns: 100%;
+  grid-template-rows: 150px auto;
+}
+
+.slide.one::before {
+  content: "";
+  height: 150px;
+  max-width: 1200px;
+  background-image: url("/wp-content/plugins/ILEK-Map-App/assets/historic-map-1200x150px.png");
+  grid-column: 1/3;
+  grid-row: 1/2;
+  margin: 0 -90px;
+}
+
+/*
+.popup.info .welcome_image {
+  width: 100%;
+  max-width: 100%;
+  height: 150px;
+  display: block;
+}
+*/
+
+.popup.info .left {
+  justify-self: stretch;
+  align-self: stretch;
+  display: grid;
+  justify-content: space-between;
+  align-content: space-between;
+  grid-template-columns: 100%;
+}
+
+.popup.info .slide.one h2,
+.popup.info .slide.one .left p {
+  margin-bottom: 0;
+  padding-right: 50px;
+  grid-column: 1/3;
+}
+
+.popup.info .slide.one h2 {
+  padding-bottom: 25px;
+}
+
+.popup.info .slide.one .left p {
+  padding-bottom: 1em;
+  margin-top: 0;
+}
+
+.popup.info .slide.one .left p:nth-child(3) {
+  padding-bottom: 0;
+}
+
+.popup.info .einfuehrung.next {
+  grid-column: 1/2;
+  align-self: end;
+}
+
+.popup.info .mitmachen {
+  grid-column: 2/3;
+  align-self: end;
+}
+
+.popup.info .right {
+  text-align: center;
+  align-self: end;
+  justify-self: stretch;
+  padding-top: 40px;
+}
+
+.wappen_wrapper {
+  border-left: 2px solid rgba(128, 128, 128, 0.6);
+}
+
+.content_wrapper .wappen {
+  margin: 30px auto;
+}
+
+.content_wrapper .wappen:nth-child(2) {
+  margin-bottom: 60px;
+}
+
+.content_wrapper .wappen img {
+  max-width: 140px;
+  margin: auto;
+}
+
+.content_wrapper .wappen:nth-child(1) img {
+  max-width: 100px;
+}
+
+.content_wrapper .wappen p {
+  margin: 0;
+}
+
+.content_wrapper .wappen:nth-child(2) p {
+  font-size: 16px;
+  line-height: 1.2em;
+  padding: 0px 0 0 20px;
+}
+
+/* Welcome Slide two/three Default Media */
+
+.popup.info .slide.two span,
+.popup.info .slide.three span,
+.popup.info .slide.four span {
+  display: inline-block;
+  padding-top: 60px;
+  padding-right: 0.3em;
+}
+
+.popup.info .slide.two .botton_row,
+.popup.info .slide.three .botton_row,
+.popup.info .slide.four .botton_row {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Navi*/
+
+.menu.top li {
+  list-style-type: none;
+}
+
+.menu.top ul {
+  margin: 0;
+}
+
+.menu a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+.logo {
+  margin: 0;
+  font-size: 40px;
+  font-weight: 500;
+  width: 100%;
+}
+
+.logo span {
+  display: block;
+  text-shadow: 0 0 1px var(--d_text);
+  padding-top: 10px;
+}
+
+.menu.top .info,
+.menu.top .medien {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 0 15px;
+  text-shadow: 0 0 8px var(--d_text);
+  position: relative;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  display: inline-flex;
+}
+
+.menu.top li:first-child {
+  display: flex;
+  min-width: 320px;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.menu.top li:first-child::before {
+  content: "";
+  background-color: transparent;
+  background-image: url("/wp-content/plugins/ILEK-Map-App/assets/page-effect-logo-2023-black.svg");
+  background-size: contain;
+  width: 200px;
+  height: 35px;
+  background-repeat: no-repeat;
+  /* display: inline-block; */
+  display: none;
+}
+
+.menu.top svg {
+  padding-right: 10px;
+}
+
+/* Footer Nav */
+.legal {
+  box-shadow: inset 0px -1px 1px 1px var(--l_grey);
+  padding: 5px 0px;
+}
+
+.legal ul {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  justify-content: flex-end;
+}
+
+.legal li {
+  list-style: none;
+  padding: 5px 30px;
+  /* background-color: rgba(255, 255, 255, 0.8); */
+  line-height: 1em;
+  font-size: 14px;
+  color: #000;
+}
+
+.legal a {
+  text-decoration: none;
+  color: #000;
+}
+
+/*Impressum & Datenschutz*/
+
+.impressum_datenschutz .menu.top ul {
+  margin: 50px;
+  padding: 0;
+}
+
+.impressum_datenschutz .content {
+  margin: 50px 5%;
+}
+
+.impressum_datenschutz .content h2 {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.impressum_datenschutz .content h3 {
+  font-size: 25px;
+}
+
+.impressum_datenschutz .content h4 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.impressum_datenschutz .content h5 {
+  font-size: 20px;
+}
+
+.impressum_datenschutz .content p {
+  padding-bottom: 40px;
+}
+
+.impressum_datenschutz .content img {
+  max-width: 300px;
+}
+
+/* Media Querries */
+@media screen and (max-width: 1280px) {
+  /* .popup.info .content_wrapper {
+    margin: 5%;
+    width: 90%;
+    max-height: 90vh;
+  } */
+
+  .popup.info .slide.two img,
+  .popup.info .slide.three img,
+  .popup.info .slide.four img {
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 980px) {
+  .kulturdatenbank .menu.top {
+    position: static;
+    width: 100%;
+  }
+
+  .kulturdatenbank .menu.top ul {
+    margin: 0;
+    padding: 15px;
+    display: grid;
+    grid-template-columns: auto 110px;
+  }
+
+  .kulturdatenbank .menu.top li {
+    position: static;
+  }
+
+  .kulturdatenbank .menu.top li:nth-child(1) {
+    grid-row: 1/3;
+    grid-column: 1/2;
+  }
+
+  .kulturdatenbank .menu.top li:nth-child(2),
+  .kulturdatenbank .menu.top li:nth-child(3) {
+    grid-column: 2/3;
+  }
+
+  .kulturdatenbank .menu.top li:nth-child(2) a,
+  .kulturdatenbank .menu.top li:nth-child(3) a {
+    color: var(--l_blue);
+    text-shadow: none;
+  }
+
+  .kulturdatenbank .menu.top li:nth-child(3) {
+    grid-row: 2/3;
+  }
+
+  .kulturdatenbank .menu.top .logo {
+    font-size: 25px;
+  }
+
+  .kulturdatenbank .menu.top .info,
+  .kulturdatenbank .menu.top .medien {
+    font-size: 18px;
+  }
+
+  .kulturdatenbank .menu.top li:nth-child(3) {
+    top: 45px;
+  }
+
+  /*Welcome Popup*/
+
+  .popup.info {
+    height: auto;
+    width: 100%;
+    padding: 0;
+  }
+
+  /* .close_wrapper {
+    height: 0;
+  } */
+  /* 
+  .popup.info .content_wrapper {
+    margin: 5%;
+    width: 90%;
+    max-height: 90vh;
+  } */
+
+  .slide.show {
+    display: block;
+    padding: 0 4%;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .popup.info .welcome_image {
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .slide.one::before {
+    display: block;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 120px;
+  }
+
+  .popup.info .slide.one h2,
+  .popup.info .slide.one .left p {
+    padding-right: 0;
+  }
+
+  .popup.info h2 span {
+    font-size: 30px;
+  }
+
+  .popup.info button,
+  .popup.info .button {
+    margin: 10px 0;
+    display: block;
+  }
+
+  .popup.info .right {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+
+  .popup.info .right .text_button {
+    grid-column: 1/3;
+    grid-row: 1/2;
+    width: 300px;
+    font-size: 17px;
+  }
+
+  .kulturdatenbank .right .text_button.button::after {
+    right: 60px;
+  }
+
+  .wappen_wrapper {
+    border: none;
+    grid-column: 1/3;
+    display: flex;
+    justify-content: center;
+    max-width: 500px;
+    margin: 40px auto 0 auto;
+    width: 100%;
+  }
+
+  .popup.info .right .wappen {
+    grid-row: 2/3;
+    width: 100%;
+    border-top: 2px solid var(--l_grey);
+    padding-top: 40px;
+  }
+
+  .popup.info .right .wappen:first-child {
+    grid-column: 1/2;
+  }
+
+  .popup.info .right .wappen:last-child {
+    grid-column: 2/3;
+  }
+
+  .popup.info .slide.two span,
+  .popup.info .slide.three span,
+  .popup.info .slide.four span {
+    padding-top: 0;
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .popup.info .einfuehrung.next,
+  .popup.info .mitmachen {
+    grid-column: 1/3;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .popup.info h2 span {
+    font-size: 26px;
+  }
+
+  /* .popup.info .mobile.close.close_icon {
+    top: 5px;
+    right: 5px;
+  } */
+
+  .slide.show {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .popup.info .einfuehrung.next {
+    margin-top: 30px;
+  }
+
+  .popup.info .right .wappen_wrapper {
+    flex-direction: column;
+  }
+
+  .popup.info .right .text_button {
+    width: 260px;
+  }
+
+  .content_wrapper .wappen:nth-child(1) img {
+    max-width: 80px;
+  }
+
+  .content_wrapper .wappen img {
+    max-width: 100px;
+  }
+
+  .content_wrapper .wappen p {
+    font-size: 15px;
+  }
+
+  .kulturdatenbank .right .text_button.button::after {
+    right: 48px;
+  }
+
+  .kulturdatenbank .menu.top ul {
+    padding: 5px;
+  }
+}
+
+/*Fonts*/
+/* barlow-100 - latin */
+@font-face {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 100;
+  src:
+    local(""),
+    url("/wp-content/plugins/ILEK-Map-App/fonts/barlow-v12-latin/barlow-v12-latin-100.woff2")
+      format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("/wp-content/plugins/ILEK-Map-App/fonts/barlow-v12-latin/barlow-v12-latin-100.woff")
+      format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* barlow-100italic - latin */
+@font-face {
+  font-family: "Barlow";
+  font-style: italic;
+  font-weight: 100;
+  src:
+    local(""),
+    url("/wp-content/plugins/ILEK-Map-App/fonts/barlow-v12-latin/barlow-v12-latin-100italic.woff2")
+      format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("/wp-content/plugins/ILEK-Map-App/fonts/barlow-v12-latin/barlow-v12-latin-100italic.woff")
+      format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* barlow-200 - latin */
+@font-face {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 200;
+  src:
+    local(""),
+    url("/wp-content/plugins/ILEK-Map-App/fonts/barlow-v12-latin/barlow-v12-latin-200.woff2")
+      format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("/wp-content/plugins/ILEK-Map-App/fonts/barlow-v12-latin/barlow-v12-latin-200.woff")
+      format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* barlow-200italic - latin */
+@font-face {
+  font-family: "Barlow";
+  font-style: italic;
+  font-weight: 200;
+  src:
+    local(""),
+    url("/wp-content/plugins/ILEK-Map-App/fonts/barlow-v12-latin/barlow-v12-latin-200italic.woff2")
+      format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("/wp-content/plugins/ILEK-Map-App/fonts/barlow-v12-latin/barlow-v12-latin-200italic.woff")
+      format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* barlow-300italic - latin */
+@font-face {
+  font-family: "Barlow";
+  font-style: italic;
+  font-weight: 300;
+  src:
+    local(""),
+    url("/wp-content/plugins/ILEK-Map-App/fonts/barlow-v12-latin/barlow-v12-latin-300italic.woff2")
+      format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("/wp-content/plugins/ILEK-Map-App/fonts/barlow-v12-latin/barlow-v12-latin-300italic.woff")
+      format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* barlow-italic - latin */
+@font-face {
+  font-family: "Barlow";
+  font-style: italic;
+  font-weight: 400;
+  src:
+    local(""),
+    url("/wp-content/plugins/ILEK-Map-App/fonts/barlow-v12-latin/barlow-v12-latin-italic.woff2")
+      format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("/wp-content/plugins/ILEK-Map-App/fonts/barlow-v12-latin/barlow-v12-latin-italic.woff")
+      format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* barlow-regular - latin */
+@font-face {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 400;
+  src:
+    local(""),
+    url("/wp-content/plugins/ILEK-Map-App/fonts/barlow-v12-latin/barlow-v12-latin-regular.woff2")
+      format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("/wp-content/plugins/ILEK-Map-App/fonts/barlow-v12-latin/barlow-v12-latin-regular.woff")
+      format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* barlow-500 - latin */
+@font-face {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 500;
+  src:
+    local(""),
+    url("/wp-content/plugins/ILEK-Map-App/fonts/barlow-v12-latin/barlow-v12-latin-500.woff2")
+      format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("/wp-content/plugins/ILEK-Map-App/fonts/barlow-v12-latin/barlow-v12-latin-500.woff")
+      format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* barlow-600 - latin */
+@font-face {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 600;
+  src:
+    local(""),
+    url("/wp-content/plugins/ILEK-Map-App/fonts/barlow-v12-latin/barlow-v12-latin-600.woff2")
+      format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("/wp-content/plugins/ILEK-Map-App/fonts/barlow-v12-latin/barlow-v12-latin-600.woff")
+      format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* barlow-500italic - latin */
+@font-face {
+  font-family: "Barlow";
+  font-style: italic;
+  font-weight: 500;
+  src:
+    local(""),
+    url("/wp-content/plugins/ILEK-Map-App/fonts/barlow-v12-latin/barlow-v12-latin-500italic.woff2")
+      format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("/wp-content/plugins/ILEK-Map-App/fonts/barlow-v12-latin/barlow-v12-latin-500italic.woff")
+      format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* barlow-600italic - latin */
+@font-face {
+  font-family: "Barlow";
+  font-style: italic;
+  font-weight: 600;
+  src:
+    local(""),
+    url("/wp-content/plugins/ILEK-Map-App/fonts/barlow-v12-latin/barlow-v12-latin-600italic.woff2")
+      format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("/wp-content/plugins/ILEK-Map-App/fonts/barlow-v12-latin/barlow-v12-latin-600italic.woff")
+      format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* barlow-700italic - latin */
+@font-face {
+  font-family: "Barlow";
+  font-style: italic;
+  font-weight: 700;
+  src:
+    local(""),
+    url("/wp-content/plugins/ILEK-Map-App/fonts/barlow-v12-latin/barlow-v12-latin-700italic.woff2")
+      format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("/wp-content/plugins/ILEK-Map-App/fonts/barlow-v12-latin/barlow-v12-latin-700italic.woff")
+      format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* barlow-300 - latin */
+@font-face {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 300;
+  src:
+    local(""),
+    url("/wp-content/plugins/ILEK-Map-App/fonts/barlow-v12-latin/barlow-v12-latin-300.woff2")
+      format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("/wp-content/plugins/ILEK-Map-App/fonts/barlow-v12-latin/barlow-v12-latin-300.woff")
+      format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* barlow-800italic - latin */
+@font-face {
+  font-family: "Barlow";
+  font-style: italic;
+  font-weight: 800;
+  src:
+    local(""),
+    url("/wp-content/plugins/ILEK-Map-App/fonts/barlow-v12-latin/barlow-v12-latin-800italic.woff2")
+      format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("/wp-content/plugins/ILEK-Map-App/fonts/barlow-v12-latin/barlow-v12-latin-800italic.woff")
+      format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* barlow-700 - latin */
+@font-face {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 700;
+  src:
+    local(""),
+    url("/wp-content/plugins/ILEK-Map-App/fonts/barlow-v12-latin/barlow-v12-latin-700.woff2")
+      format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("/wp-content/plugins/ILEK-Map-App/fonts/barlow-v12-latin/barlow-v12-latin-700.woff")
+      format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* barlow-900 - latin */
+@font-face {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 900;
+  src:
+    local(""),
+    url("/wp-content/plugins/ILEK-Map-App/fonts/barlow-v12-latin/barlow-v12-latin-900.woff2")
+      format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("/wp-content/plugins/ILEK-Map-App/fonts/barlow-v12-latin/barlow-v12-latin-900.woff")
+      format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* barlow-900italic - latin */
+@font-face {
+  font-family: "Barlow";
+  font-style: italic;
+  font-weight: 900;
+  src:
+    local(""),
+    url("/wp-content/plugins/ILEK-Map-App/fonts/barlow-v12-latin/barlow-v12-latin-900italic.woff2")
+      format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("/wp-content/plugins/ILEK-Map-App/fonts/barlow-v12-latin/barlow-v12-latin-900italic.woff")
+      format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* barlow-800 - latin */
+@font-face {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 800;
+  src:
+    local(""),
+    url("/wp-content/plugins/ILEK-Map-App/fonts/barlow-v12-latin/barlow-v12-latin-800.woff2")
+      format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("/wp-content/plugins/ILEK-Map-App/fonts/barlow-v12-latin/barlow-v12-latin-800.woff")
+      format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}

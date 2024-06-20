@@ -1,0 +1,221 @@
+/*
+.close_icon:hover,
+.close_icon:active {
+ opacity: 0.7;
+ background-color: #fff;
+}
+*/
+
+.kulturdatenbank button.close_icon:hover::after,
+.kulturdatenbank button.close_icon:active::after {
+  background-image: none;
+}
+
+.close_icon::before {
+  content: "";
+  background-image: url("/wp-content/plugins/ILEK-Map-App/icons/close-black.svg");
+  display: flex;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 32px;
+  height: 32px;
+  position: relative;
+  left: 6px;
+}
+
+/*Welcome Popup Default Media*/
+.popup.info .close_icon {
+  box-shadow: 0 0 5px 1px var(--l_grey);
+  z-index: 9;
+}
+
+.popup.info .close_icon:hover,
+.popup.info .close_icon:active {
+  background-color: #fff;
+}
+
+.mobile.close.close_icon {
+  display: none;
+}
+
+.popup.info .close_icon {
+  width: 40px;
+  height: 40px;
+}
+
+.content_wrapper .close.close_icon,
+.mobile.close.close_icon {
+  right: -7.5px;
+  top: -7.5px;
+  position: relative;
+  border: none;
+  padding: 7.5px;
+  border-radius: 50px;
+  box-shadow: 0 0 5px 1px var(--l_grey);
+  margin: 0;
+  float: right;
+}
+
+.close_icon::before {
+  width: 18px;
+  height: 18px;
+  left: -1.5px;
+  margin: 5px;
+  background-size: 200%;
+  line-height: 18px;
+  bottom: 1.5px;
+}
+
+.close_icon:hover::before,
+.close_icon:active:before {
+  opacity: 0.7;
+}
+
+.close_icon::after {
+  content: "";
+  background-image: none;
+}
+
+.popup.info .slide .close_icon {
+  margin-right: 0;
+  position: relative;
+  width: max-content;
+  height: auto;
+  color: var(--d_text);
+  display: block;
+  margin: 0 auto;
+  left: 0;
+}
+
+/* Close X Map Popup Default Media */
+
+.map_block.leaflet-container a.leaflet-popup-close-button {
+  position: absolute;
+  top: -3px;
+  right: -2px;
+  margin: 0;
+}
+
+.map_block.leaflet-container a.leaflet-popup-close-button::before {
+  content: "";
+  background-image: url("/wp-content/plugins/ILEK-Map-App/icons/close-black.svg");
+  display: flex;
+  background-position: center center;
+  background-size: 60%;
+  background-repeat: no-repeat;
+  position: relative;
+  left: 0px;
+  background-color: #fff;
+  border-radius: 50px;
+  box-shadow: 0 0 2px 1px var(--l_grey);
+  width: 24px;
+  height: 24px;
+}
+
+.map_block.leaflet-container a.leaflet-popup-close-button span {
+  position: relative;
+  display: block;
+  height: 24px;
+  visibility: hidden;
+}
+
+.map_block.leaflet-container a.leaflet-popup-close-button:hover,
+.map_block.leaflet-container a.leaflet-popup-close-button:active {
+  background-color: var(--d_text);
+  color: #fff;
+  opacity: 1;
+}
+
+/* Big Close  Default Media */
+.post_content a.close {
+  margin: 0;
+}
+
+.post_content .close_icon::before,
+.gallery .close_icon::before {
+  background-image: url("/wp-content/plugins/ILEK-Map-App/icons/close-blue.svg");
+}
+
+.close.close_icon,
+.post_content .close {
+  width: 60px;
+  height: 60px;
+  display: block;
+  color: var(--d_blue);
+  text-decoration: none;
+  position: fixed;
+  right: 30px;
+  top: 60px;
+  margin: 0;
+}
+
+.close .close_icon {
+  width: 60px;
+  height: 60px;
+  position: fixed;
+  right: 30px;
+  top: 60px;
+}
+
+.close .close_icon::before {
+  width: 40px;
+  height: 40px;
+}
+
+/* Media Querries */
+@media screen and (max-width: 980px) {
+  .kulturdatenbank .post_content {
+    position: relative;
+  }
+
+  .kulturdatenbank .post_content .close,
+  .kulturdatenbank .post_content .close_icon {
+    position: absolute;
+    top: 0;
+    bottom: auto;
+  }
+
+  .post_content .close_icon::before {
+    left: 0;
+  }
+
+  /* Weclome Popup < 980px */
+  .desktop.close.close_icon {
+    display: none;
+  }
+
+  .mobile.close.close_icon {
+    display: inline-block;
+    right: 3%;
+    top: 3%;
+    margin: 0;
+    position: fixed;
+    z-index: 99999;
+  }
+
+  .gallery .close .close_icon {
+    top: 15px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .post_content .close,
+  .close .close_icon::before {
+    width: 25px;
+    height: 25px;
+    top: 5px;
+    right: 8px;
+  }
+
+  .gallery .close .close_icon {
+    right: 15px;
+    width: 25px;
+    height: 25px;
+  }
+
+  .gallery .close .close_icon::before {
+    width: 25px;
+    height: 25px;
+  }
+}

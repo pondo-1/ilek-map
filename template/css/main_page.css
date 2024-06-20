@@ -1,0 +1,264 @@
+/* html, body { width:100%;padding:0;margin:0; } */
+/* #map_top_banner {
+  position: relative;
+  top: 200px;
+  z-index: 999;
+  display: block;
+  color: #fff;
+  width: fit-content;
+} */
+
+/* Basic Side Grid Default Media */
+.side_wrapper {
+  grid-template-columns: 70% 30%;
+}
+
+/* Header Nav Default Media */
+
+.menu.top li:nth-child(2) {
+  left: 57%;
+}
+
+.menu.top li:nth-child(3) {
+  left: 62%;
+}
+
+/*Sidebar Rahmen Default Media */
+
+.sidebar {
+  /* max-width: 650px; */
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+.category_filter_section,
+.sort_options_block,
+.search {
+  flex: 0 1 auto;
+  box-sizing: border-box;
+}
+
+.datenbank_list {
+  overflow-y: auto;
+  flex: 1 1 auto;
+}
+
+/*Sidebar Default Media */
+
+.category {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--d_blue);
+  font-family: "Barlow";
+  padding-bottom: 10px;
+}
+
+.category_filter_section {
+  padding: 30px 45px 15px 45px;
+  margin: 0;
+}
+
+.single_category_wrapper {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  cursor: pointer;
+}
+
+.cat_checkbox {
+  width: 25px;
+  height: 25px;
+}
+
+.cat_checkbox[checked="true"]::before {
+  width: 25px;
+  height: 25px;
+  background-color: var(--d_blue);
+}
+
+.cat_label {
+  font-size: 18px;
+  align-self: stretch;
+  width: 100%;
+  padding: 7.5px 0;
+  position: relative;
+  margin-left: 7.5px;
+  display: flex;
+  cursor: pointer;
+}
+
+.cat_label:hover,
+.cat_label:active {
+  opacity: 0.75;
+}
+
+.cat_icon {
+  width: 30px;
+  display: block;
+  margin-right: 7.5px;
+}
+
+.cat_name {
+  text-decoration: underline dotted 2px var(--d_text);
+  text-underline-offset: 6px;
+}
+
+.sort_options_block {
+  padding: 15px 10%;
+  color: var(--l_grey);
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.kulturdatenbank .sidebar .sort_options_block span {
+  min-width: 105px;
+}
+
+#main_page_list_sort_options {
+  padding: 15px;
+  color: var(--d_text);
+  font-weight: 500;
+  box-shadow: 1px 1px 2px 0px var(--l_grey);
+  margin-left: 15px;
+  font-size: 15px;
+  background-color: #fff;
+  border: none;
+  width: 345px;
+}
+
+.datenbank_list_block {
+  box-shadow: inset 0px 0px 1px 1px var(--l_grey);
+}
+
+.datenbank_single_entry {
+  padding: 22.5px 45px 0 45px;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.entry_author,
+.entry_date {
+  display: none;
+}
+
+/* .datenbank_single_entry:nth-child(odd) {
+  background-color: rgba(0, 156, 222, 0.1);
+  padding-bottom: 0;
+}
+ */
+.datenbank_single_entry .entry_category {
+  border-bottom: 2px dashed var(--l_grey);
+  padding-bottom: 22.5px;
+}
+
+.datenbank_list .entry_title {
+  font-size: 17px;
+  line-height: 25px;
+  font-weight: 600;
+}
+
+.entry_category img {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  top: 5px;
+  margin-right: 7.5px;
+}
+
+.datenbank_single_entry.marked {
+  background-color: var(--d_blue);
+  color: #fff;
+  padding-bottom: 30px;
+  cursor: default;
+}
+
+.datenbank_single_entry.marked .entry_category {
+  border: none;
+  padding-bottom: 7.5px;
+}
+
+.datenbank_single_entry.marked .button {
+  border-color: #fff;
+  background-color: var(--d_blue);
+  color: #fff;
+}
+
+.datenbank_single_entry.marked .button:hover,
+.datenbank_single_entry.marked .button:active {
+  opacity: 0.7;
+}
+
+.datenbank_single_entry.marked .button::after {
+  background-image: url(/wp-content/plugins/ILEK-Map-App/icons/right-svgrepo-com-white.svg);
+}
+
+.dn.button.main-page-button {
+  display: none;
+}
+
+.dn.button.main-page-button.db {
+  display: block;
+}
+
+/* Media Querries */
+@media screen and (max-width: 980px) {
+  .kulturdatenbank .sidebar {
+    min-width: 250px;
+  }
+
+  .category_filter_section {
+    padding-top: 15px;
+  }
+
+  .category_filter_section .category {
+    font-weight: 500;
+  }
+
+  .single_category_wrapper {
+    width: max-content;
+  }
+
+  .kulturdatenbank .sidebar .sort_options_block {
+    justify-content: flex-start;
+    padding-left: 5px;
+  }
+
+  .kulturdatenbank #main_page_list_sort_options {
+    background-color: #fff;
+    width: 185px;
+  }
+
+  .search {
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 96%;
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .category_filter_section {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .datenbank_single_entry {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .cat_label {
+    font-size: 16px;
+  }
+
+  .sort_options_block {
+    padding: 15px;
+    width: 100%;
+    justify-content: center;
+  }
+}

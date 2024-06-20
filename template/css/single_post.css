@@ -1,0 +1,473 @@
+/* Side Beitrag Groß */
+.single_post .side_wrapper {
+  grid-template-columns: 45% 55%;
+}
+
+.sidebar {
+  /* padding: 60px 90px; */
+  grid-row: 1/4;
+}
+
+.post_content {
+  margin-top: 60px;
+  overflow-y: scroll;
+}
+
+.post_content > *,
+.post_content .wp-block-image {
+  margin-left: 10%;
+  margin-right: 20%;
+}
+
+/* disable: Eintrag erstellt von ... am ...  next to title and category*/
+
+.just_checkin > p:nth-child(1) {
+  display: none;
+}
+
+/*Header nav Default Media */
+.single_post .menu.top {
+  position: unset;
+  width: 100%;
+  height: 0;
+}
+.single_post .menu.top ul {
+  margin: 0;
+  padding: 15px;
+  /* display:grid;
+  grid-template-columns: auto 110px min-content; */
+}
+.single_post .menu.top li {
+  top: 20px;
+}
+.single_post .menu.top li:nth-child(1) {
+  left: 30px;
+}
+.single_post .menu.top li:nth-child(2) {
+  left: 28%;
+}
+.single_post .menu.top li:nth-child(3) {
+  left: 36%;
+}
+
+/*Map Popup Default Media */
+
+.single_post_main_block .leaflet-popup-content-wrapper.current {
+  background-color: rgba(255, 255, 255, 0);
+  box-shadow: none;
+}
+
+.single_post_main_block .leaflet-popup-content-wrapper.current .hier_bin_ich {
+  width: 100%;
+}
+
+.single_post_main_block
+  .leaflet-popup-content-wrapper.current
+  .hier_bin_ich
+  .popup_title {
+  margin: 0 auto;
+  width: max-content;
+  position: relative;
+  left: 10px;
+}
+
+.single_post_main_block .current .leaflet-popup-close-button,
+.single_post_main_block .current .leaflet-popup-tip-container {
+  display: none;
+}
+
+.single_post_main_block .leaflet-popup-content {
+  justify-content: center;
+}
+
+.single_post_main_block .popup_title {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.5em;
+  text-shadow: 0px 0px 2px #fff;
+  color: var(--d_text);
+}
+
+/* content header Default Media */
+p {
+  font-size: 22px;
+}
+.entry_category b {
+  padding: 0 7.5px;
+  font-weight: 500;
+}
+
+.entry_category p {
+  display: flex;
+  align-items: center;
+  padding-bottom: 40px;
+}
+
+.entry_category img {
+  width: 30px;
+}
+
+/* Farben der Kategorien Default Media */
+.brauchtum-und-veranstaltungen b {
+  color: var(--d_blue);
+}
+
+.gemeinden b {
+  color: var(--l_grey);
+}
+
+.kulturelle-sehenswurdigkeiten b {
+  color: var(--red);
+}
+
+.point-of-interest b {
+  color: var(--d_green);
+}
+
+.sagen-legenden b {
+  color: var(--l_green);
+}
+
+.sprache-und-dialekt b {
+  color: var(--magenta);
+}
+
+.thementouren b {
+  color: var(--yellow);
+}
+
+/* Entry Content Text Default Media */
+
+.entry_category + p {
+  display: none;
+}
+
+.post_content h2,
+.post_content h3,
+.post_content h4,
+.post_content h5,
+.post_content h6 {
+  margin-top: 1.5em;
+  margin-bottom: 1em;
+  color: var(--l_blue);
+  font-weight: 600;
+  font-size: 32px;
+}
+
+.single_post_side_bar .post_content h3 {
+  font-size: 28px;
+}
+
+.single_post_side_bar .post_content h4 {
+  font-size: 24px;
+}
+
+.single_post_side_bar .post_content h5 {
+  font-size: 24px;
+}
+
+.single_post_side_bar .post_content h6 {
+  font-size: 24px;
+}
+
+.post_content .wp-block-image.aligncenter {
+  display: flex;
+  flex-direction: column;
+}
+.post_content .wp-block-image > * {
+  align-self: center;
+}
+
+.post_content .wp-block-image figcaption {
+  color: var(--d_text);
+  font-size: 17px;
+  text-align: left;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  font-weight: 400;
+}
+
+.post_content .wp-block-quote {
+  background-color: rgba(0, 156, 222, 0.05);
+  padding-left: 15%;
+  padding-right: 20%;
+  border-left: 0;
+  padding-top: 60px;
+  padding-bottom: 90px;
+  margin-bottom: 60px;
+}
+.post_content .wp-block-quote p::before {
+  content: "„";
+  visibility: visible;
+}
+.post_content .wp-block-quote p::after {
+  content: "“";
+  visibility: visible;
+}
+
+.post_content .wp-block-quote p {
+  font-size: 38px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #009cde;
+  margin: 0;
+}
+
+.post_content .wp-block-quote > cite {
+  margin-top: 25px;
+  display: block;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+/* List */
+.post_content > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6em;
+  font-size: 22px;
+  font-weight: 300;
+}
+
+.post_content > ul strong {
+  font-weight: 600;
+}
+
+.post_content li::marker {
+  color: var(--l_blue);
+  font-size: 16px;
+}
+
+.content_footer {
+  margin-top: 60px;
+  border-top: 2px dashed var(--l_grey);
+  padding-bottom: 150px;
+}
+
+.content_footer .content_footer_text {
+  text-align: right;
+}
+
+.content_footer .button {
+  background-color: rgba(255, 255, 255, 0);
+  padding: 15px 55px 15px 30px;
+  display: block;
+  min-width: 170px;
+  max-width: 170px;
+}
+
+.content_footer .button::after {
+  right: 25px;
+  background-image: url(/wp-content/plugins/ILEK-Map-App/icons/share-svgrepo-com.svg);
+}
+
+.content_footer .button:hover,
+.content_footer .button:active {
+  color: #fff;
+}
+
+.button.share.mobile {
+  display: none;
+}
+
+.content_footer p {
+  font-size: 17px;
+}
+
+.single_post .legal {
+  box-shadow: none;
+}
+
+#gform_confirmation_wrapper_4 {
+  position: fixed;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  padding: 2em;
+  background: #ffffff80;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: 700;
+  animation: hide_confirmation 0s 3s forwards;
+}
+
+@keyframes hide_confirmation {
+  to {
+    visibility: hidden;
+  }
+}
+
+/* Media Querries */
+
+@media screen and (max-width: 1650px) {
+  .entry_category p {
+    display: grid;
+    grid-template-columns: 30px auto;
+    grid-template-rows: min-content min-content;
+    margin: 0;
+    font-size: 18px;
+    padding-bottom: 1.2em;
+  }
+
+  .entry_category span {
+    grid-column: 1/3;
+    grid-row: 1/2;
+    padding-bottom: 0;
+  }
+
+  .entry_category img {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+
+  .entry_category b {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 1350px) {
+  /* .single_post .menu.top ul{
+    grid-template-columns: auto min-content;
+  } */
+  body.kulturdatenbank.single_post .menu.top li:nth-child(2) {
+    left: 32%;
+  }
+  body.kulturdatenbank.single_post .menu.top li:nth-child(3) {
+    top: 50px;
+    left: 32%;
+  }
+  .single_post.kulturdatenbank .leaflet-container .leaflet-control-attribution {
+    max-width: 70%;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  /*
+  .single_post_main_block.map_block,
+  .kulturdatenbank .menu.top,
+  .scrolldown.icon {
+display: none;
+  }
+  */
+
+  .kulturdatenbank .sidebar {
+    padding: 20px 0;
+  }
+
+  .kulturdatenbank .post_content {
+    margin-top: 30px;
+  }
+
+  .post_content > * {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .post_content h1,
+  .post_content h2,
+  .post_content h3,
+  .post_content h4,
+  .post_content h5,
+  .post_content h6 {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+    -webkit-hyphenate-character: "-";
+    hyphenate-limit-chars: 6 4 4;
+    -webkit-hyphenate-limit-before: 4;
+    -webkit-hyphenate-limit-after: 4;
+    -ms-hyphenate-limit-chars: 6 4 4;
+    -moz-hyphenate-limit-chars: 6 4 4;
+  }
+
+  .post_content h1 {
+    font-size: 38px;
+  }
+
+  .button.share.desktop {
+    display: none;
+  }
+
+  .content_footer .button.share.mobile {
+    display: block;
+    min-width: 188px;
+    max-width: 188px;
+  }
+
+  .single_post.kulturdatenbank .leaflet-container .leaflet-control-attribution {
+    max-width: unset;
+  }
+  .single_post .menu.top {
+    height: unset;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .post_content {
+    margin-top: 20px;
+  }
+
+  .post_content h1 {
+    font-size: 28px;
+  }
+
+  .kulturdatenbank .sidebar p {
+    font-size: 18px;
+  }
+
+  .kulturdatenbank .post_content > *,
+  .post_content .wp-block-image {
+    margin-left: 5%;
+    margin-right: 10%;
+  }
+
+  .post_content .wp-block-image figcaption {
+    font-size: 15px;
+  }
+
+  .kulturdatenbank .post_content h2,
+  .kulturdatenbank .post_content h3,
+  .kulturdatenbank .post_content h4,
+  .kulturdatenbank .post_content h5,
+  .kulturdatenbank .post_content h6 {
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.2em;
+  }
+
+  .kulturdatenbank .post_content .wp-block-quote {
+    margin: 0;
+    padding: 40px 5% 40px 10%;
+  }
+
+  .kulturdatenbank .post_content .wp-block-quote p {
+    font-size: 24px;
+    line-height: 1.5em;
+  }
+
+  .kulturdatenbank .post_content .wp-block-quote cite {
+    font-size: 18px;
+    line-height: 1.2em;
+  }
+
+  .post_content > ul {
+    padding-left: 5%;
+  }
+
+  .post_content li {
+    font-size: 18px;
+  }
+
+  .content_footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

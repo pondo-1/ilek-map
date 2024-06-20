@@ -1,0 +1,64 @@
+.search {
+  position: relative;
+  width: 80%;
+  margin: 0px 10% 30px 10%;
+  background-color: rgba(128, 128, 128, 0.1);
+}
+
+.searchTerm {
+  border: none;
+  padding: 5px 15px;
+  height: 65px;
+  border-radius: 5px;
+  outline: none;
+  color: var(--d_text);
+  box-shadow: inset 0px 0px 1px 1px var(--l_grey);
+  width: 100%;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.searchButton {
+  width: 30px;
+  height: 30px;
+  border: none;
+  color: rgba(255, 255, 255, 0);
+  cursor: pointer;
+  font-size: 30px;
+  background-image: url(/wp-content/plugins/ILEK-Map-App/icons/Icon-search.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 15px;
+  top: 16.5px;
+  padding: 15px;
+  margin: 0;
+}
+
+.searchButton:hover,
+.searchButton:active {
+  background-color: #fff;
+  opacity: 0.7;
+}
+
+.kulturdatenbank button.searchButton:hover::after,
+.kulturdatenbank button.searchButton:active::after {
+  background-image: none;
+}
+
+.searchButton svg {
+  visibility: hidden;
+  display: none;
+}
+
+.searchButton::after {
+  background-image: none;
+}
+
+#livesearch {
+  display: none;
+}
+
+/* Media Querries */
+@media screen and (max-width: 980px) {
+}

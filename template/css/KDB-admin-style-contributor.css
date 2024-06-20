@@ -1,0 +1,36 @@
+#wp-media-grid .select-mode-toggle-button {
+  display: none;
+}
+
+/*  */
+.media-sidebar {
+  display: none;
+}
+
+#wp-attachment_content-wrap,
+.compat-attachment-fields,
+.media-types .media-types-required-info {
+  display: none;
+}
+
+.components-panel .color-block-support-panel, 
+.components-panel .typography-block-support-panel,
+.components-panel .dimensions-block-support-panel,
+.components-panel .block-editor-block-inspector__advanced,
+.components-panel .block-editor-block-styles,
+.components-panel .border-block-support-panel,
+.components-button[aria-label="Ausrichtung"],
+.components-button[aria-label="Mehr"],
+.components-button[aria-label="Kursiv"],
+.components-button[aria-label="Bild"],
+#id-dj0lok-6,
+.components-button[aria-label="Überschrift 1"],
+.components-button[aria-label="Überschrift 4"],
+.components-button[aria-label="Überschrift 5"],
+.components-button[aria-label="Überschrift 6"] {
+display: none;
+}
+
+.editor-styles-wrapper h2.wp-block-heading  {
+  font-size: 35px;
+}

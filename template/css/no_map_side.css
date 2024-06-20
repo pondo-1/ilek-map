@@ -1,0 +1,26 @@
+.kulturdatenbank {
+   background-color: rgba(128, 128, 128, 0.1);
+}
+
+.kulturdatenbank .menu.top {
+  position: static;
+  max-width: 400px;
+  width: 400px;
+}
+
+.menu.top li:nth-child(2),
+.menu.top li:nth-child(3) {
+  display: none;
+}
+
+.kulturdatenbank .legal {
+  position: static;
+  font-size: 20px;
+}
+
+/* Media Querries */
+@media screen and (max-width: 980px) {
+
+
+
+}
