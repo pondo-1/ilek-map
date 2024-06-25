@@ -2,9 +2,11 @@
 
 <nav class="menu top">
     <ul>
-        <li><a class="logo" href="https://page-effect.de/">
+        <li>
+            <a class="logo" href="/">
                 <h1 class="logo"><span class="d_blue">ILEK Online</span></h1>
-            </a></li>
+            </a>
+        </li>
         <li><a class="info" href="#">
                 <svg width="25px" height="25px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink">

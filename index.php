@@ -25,15 +25,15 @@ class ILEKdemo
   // Icon names need to be shortname + .svg
 
   private $category_shortname_array = array(
-    "Kommunen (inkl. statistischer Daten)"    => "kommunen",
+    "Point of Interest"    => "kommunen",
     "Schulen"                                 => "schulen",
     "Kindertagesstätten"                      => "kindertagesstaetten",
     "Medizinische Einrichtungen"              => "medizinische_einrichtungen",
     "Soziale Einrichtungen"                   => "soziale_einrichtungen",
-    "Nahversorgungseinrichtungen (des täglichen Bedarfs)" => "nahversorgungseinrichtungen",
+    "Einzelhandel des täglichen Bedarfs" => "nahversorgungseinrichtungen",
     "Gastronomische Einrichtungen"            => "gastronomische_einrichtungen",
     "Beherbergungsbetriebe"                   => "beherbergungsbetriebe",
-    "Sehenswürdigkeiten"                      => "sehenswuerdigkeiten",
+    "Kulturweg"                      => "sehenswuerdigkeiten",
     "ILE-Projekte"                            => "ile-projekte",
     "Regionalbudget-Projekte"                 => "regionalbudget-projekte",
     "Verfahren der ländlichen Entwicklung"    => "verfahren_der_laendlichen_entwicklung",
