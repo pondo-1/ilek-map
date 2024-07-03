@@ -210,7 +210,7 @@ p {
   font-style: italic;
   font-weight: 400;
   line-height: 1.2;
-  color: #009cde;
+  color: var(--l_blue);
   margin: 0;
 }
 
