@@ -161,14 +161,6 @@ class ILEKdemo
       }
     );
 
-
-    //////--------------new Post page ----------------    
-    //////////------------ Gutenberg modify----------------// 
-    //add_action('enqueue_block_editor_assets', array($this, 'adminAssets'));
-
-    //////////------------ Sidebar width----------------//
-    add_action('admin_enqueue_scripts', array($this, 'toast_enqueue_jquery_ui'));
-    add_action('admin_head', array($this, 'toast_resizable_sidebar'));
     //////////------------ Sidebar content modify----------------//
     add_action('init', array($this, 'cc_gutenberg_register_files'));
 
@@ -397,28 +389,6 @@ class ILEKdemo
   // }
 
 
-  //////////------------ Sidebar width----------------//
-  function toast_enqueue_jquery_ui()
-  {
-    wp_enqueue_script('jquery-ui-resizable');
-  }
-  function toast_resizable_sidebar()
-  { ?>
-<style>
-.interface-interface-skeleton__sidebar .interface-complementary-area {
-    width: 100%;
-}
-
-.edit-post-layout:not(.is-sidebar-opened) .interface-interface-skeleton__sidebar {
-    display: none;
-}
-
-.is-sidebar-opened .interface-interface-skeleton__sidebar {
-    width: 350px;
-}
-</style>
-<?php }
-  //////////end------------ Sidebar width----------------//
 
   function reload_metaboxes_map($hook)
   {
