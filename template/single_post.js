@@ -34,7 +34,7 @@ async function main() {
       maxZoom: 18,
       minZoom: 11,
       attribution:
-        '© <a href="https://www.mapbox.com/about/maps/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> <strong><a href="https://www.mapbox.com/map-feedback/" target="_blank">Improve this map</a></strong>',
+        '© <a href="https://www.mapbox.com/about/maps/">Mapbox</a> © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> <strong><a href="https://www.mapbox.com/map-feedback/" target="_blank">Improve this map</a></strong>',
       //id: 'mapbox/streets-v11',
       id: "pondelek/cl9fbuboj000e14o2xcxw3oom",
       accessToken:

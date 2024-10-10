@@ -23,26 +23,6 @@
         </svg>
         Info
       </a></li>
-    <!--  <li>
-      <a class="medien" href="/mediendatenbank">
-        <svg width="25px" height="25px" viewBox="0 0 18 16" version="1.1" xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink">
-          <title>Group 3</title>
-          <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-            <g id="01-willkommen" transform="translate(-825.000000, -38.000000)">
-              <g id="Group-3" transform="translate(825.000000, 38.000000)">
-                <polygon id="Fill-1" fill="#FFFFFF"
-                  points="12.5171 5.6486 12.5171 1.7046 1.5221 1.7046 1.5221 11.1686 5.5521 11.1686 5.5521 14.6286 16.2401 14.6286 16.2401 5.6486">
-                </polygon>
-                <path
-                  d="M0,0 L0,12.001 L4,12.001 L4,16 L18,16 L18,4.001 L14,4.001 L14,0 L0,0 Z M2.014,9.986 L11.986,9.986 L11.986,2.014 L2.014,2.014 L2.014,9.986 Z M6.014,12.001 L14,12.001 L14,6.014 L15.986,6.014 L15.986,13.986 L6.014,13.986 L6.014,12.001 Z"
-                  id="Fill-2" fill="#009CDE"></path>
-              </g>
-            </g>
-          </g>
-        </svg>
-        Medien
-      </a>
-    </li> -->
+
   </ul>
 </nav>
