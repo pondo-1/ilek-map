@@ -9,7 +9,7 @@
       </a>
     </li>
     <li><a class="info" href="#">
-        <svg width="25px" height="25px" viewBox="0 0 20 20" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
+        <svg width="25px" height="25px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
           <title>Info-Icon</title>
           <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
             <g id="01-willkommen" transform="translate(-593.000000, -38.000000)">
@@ -25,8 +25,8 @@
       </a></li>
     <!--  <li>
       <a class="medien" href="/mediendatenbank">
-        <svg width="25px" height="25px" viewBox="0 0 18 16" version="1.1" xmlns="https://www.w3.org/2000/svg"
-          xmlns:xlink="https://www.w3.org/1999/xlink">
+        <svg width="25px" height="25px" viewBox="0 0 18 16" version="1.1" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink">
           <title>Group 3</title>
           <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
             <g id="01-willkommen" transform="translate(-825.000000, -38.000000)">

@@ -10,7 +10,7 @@ function map_init(div_id) {
     zoom: 12,
   };
   let map = L.map(div_id, options);
-  L.tileLayer("https://{s}.tile.osm.org/{z}/{x}/{y}.png", {
+  L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
     attribution: "OSM",
   }).addTo(map);
   return map;

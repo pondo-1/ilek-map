@@ -30,7 +30,7 @@ async function main() {
       maxZoom: 18,
       minZoom: 11,
       attribution:
-        '© <a target="_blank" href="https://www.mapbox.com/about/maps/">Mapbox</a> | © <a target="_blank" href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> | <a target="_blank" href="https://www.mapbox.com/map-feedback/">Improve this map</a>',
+        '© <a target="_blank" href="https://www.mapbox.com/about/maps/">Mapbox</a> | © <a target="_blank" href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> | <a target="_blank" href="https://www.mapbox.com/map-feedback/">Improve this map</a>',
       id: "pondelek/cl9fbuboj000e14o2xcxw3oom",
       accessToken:
         "pk.eyJ1IjoicG9uZGVsZWsiLCJhIjoiY2w5Zm1tc3h4MGphODNvbzBkM29jdWRlaCJ9.j64kLJQP_RmwAccN1jGKrw",
