@@ -1,6 +1,8 @@
 # ilek-map
 
-Official ILEK Map Repo by Page Effect for all upcoming ILEK Projects. This is a fork of the ILEK Demo Repo which is a Fork of Kulturdatenbank Plugin
+This Plugin is only used for the ILEK project fraenkischer-sueden-online.de
+It is a fork of "kulturdatenbank sinngrund"
+For Upcoming Ilek Projects, there is a new Fork - a theme - community-map-theme
 
 Change Map Center
 
